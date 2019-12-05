@@ -10,7 +10,7 @@ public class ModelCliente {
     String cidadeCliente;
     String cepCliente;
     String ufCliente;
-    String celularCliente;
+    String telefoneCliente;
     
 
     public String getSobrenomeCliente() {
@@ -29,12 +29,12 @@ public class ModelCliente {
         this.cpfCliente = cpfCliente;
     }
 
-    public String getCelularCliente() {
-        return celularCliente;
+    public String getTelefoneCliente() {
+        return telefoneCliente;
     }
 
-    public void setCelularCliente(String celularCliente) {
-        this.celularCliente = celularCliente;
+    public void setTelefoneCliente(String telefoneCliente) {
+        this.telefoneCliente = telefoneCliente;
     }
     
 
