@@ -66,7 +66,8 @@ public class ViewCliente extends javax.swing.JFrame {
 
         jLabel8.setText("jLabel8");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastrar Cliente");
 
         jtCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
