@@ -18,10 +18,10 @@ public class ConnectionFactory {
 
 
     private String servidor = "localhost";
-    private String nomeDoBanco = "lojamvc";
+    private String nomeDoBanco = "centralMusic";
     private String user = "root";
     private String password = "";
-    private String port = "3307";
+    private String port = "3306";
     
     public ConnectionFactory(){}
     
@@ -41,7 +41,7 @@ public class ConnectionFactory {
         //    Class.forName("com.mysql.jdbc.Driver").newInstance();
 
             //local do banco, nome do banco, usuario e senha
-            String url = "jdbc:mysql://localhost:3307/lojamvc";
+            String url = "jdbc:mysql://localhost:3306/centralMusic";
             this.setCon((Connection) DriverManager.getConnection(url, user, password));
 
             //se ocorrer tudo bem, ou seja, se conectar a linha a segui é executada

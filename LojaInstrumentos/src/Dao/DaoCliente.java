@@ -15,8 +15,16 @@ public class DaoCliente extends ConnectionFactory {
     public int salvarClienteDAO(ModelCliente pModelCliente) {
         try {
             this.conectar();
-            return this.insertSQL("INSERT INTO cliente("
-                    + "nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,telefone_cli)"
+            return this.insertSQL(
+                    "INSERT INTO cliente("
+                    + "nome_cli,"
+                    + "sobrenome_cli,"
+                    + "cpf_cli,"
+                    + "endereco_cli,"
+                    + "cidade_cli,"
+                    + "cep_cli,"
+                    + "uf_cli,"
+                    + "telefone_cli)"
                     + " VALUES("
                     + "'" + pModelCliente.getNomeCliente()+ "',"
                     + "'" + pModelCliente.getSobrenomeCliente()+ "',"
@@ -26,7 +34,8 @@ public class DaoCliente extends ConnectionFactory {
                     + "'" + pModelCliente.getCepCliente()+ "'," 
                     + "'" + pModelCliente.getUfCliente()+ "',"        
                     + "'" + pModelCliente.getTelefoneCliente()+ "'"
-                    + ");");
+                    + ");"
+            );
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
@@ -73,7 +82,9 @@ public class DaoCliente extends ConnectionFactory {
                     + "cep_cli = '" + pModelCliente.getCepCliente() + "',"
                     + "uf_cli = '" + pModelCliente.getUfCliente() + "',"
                     + "telefone_cli = '" + pModelCliente.getTelefoneCliente() + "'"
-                    + " WHERE cod_cli = '" + pModelCliente.getCodigoCliente() + "'");
+                    + " WHERE "
+                    + "cod_cli = '" + pModelCliente.getCodigoCliente() + "'"
+                    + ";");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,9 +106,10 @@ public class DaoCliente extends ConnectionFactory {
         try {
             this.conectar();
             this.executarSQL("SELECT "
-                    + "cod_cli,nome_cli, endereco_cli,"
+                    + "cod_cli,nome_cli,sobrenome_cli,cpf_cli,endereco_cli,"
                     + " cidade_cli, cep_cli,uf_cli, telefone_cli"
-                    + " FROM cliente WHERE cod_cli = " + pCodigoCliente);
+                    + " FROM cliente WHERE cod_cli = '" + pCodigoCliente+ "'"
+                    + ";");
             while (this.getResultSet().next()) {
                 modelCliente.setCodigoCliente(this.getResultSet().getInt("cod_cli"));
                 modelCliente.setNomeCliente(this.getResultSet().getString("nome_cli"));
@@ -128,9 +140,16 @@ public class DaoCliente extends ConnectionFactory {
         try {
             this.conectar();
             this.executarSQL("SELECT "
-                    + "cod_cli,nome_cli,sobrenome_cli,cpf_cli,endereco_cli,"
-                    + "cidade_cli,cep_cli,uf_cli,telefone_cli "
-                    + "FROM cliente;");
+                    + "cod_cli,"
+                    + "nome_cli,"
+                    + "sobrenome_cli,"
+                    + "cpf_cli,"
+                    + "endereco_cli,"
+                    + "cidade_cli,"
+                    + "cep_cli,"
+                    + "uf_cli,"
+                    + "telefone_cli "
+                    + "FROM cliente");
 
             while (this.getResultSet().next()) {
                 modelCliente = new ModelCliente();
