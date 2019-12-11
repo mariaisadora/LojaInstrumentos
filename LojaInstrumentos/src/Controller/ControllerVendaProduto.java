@@ -1,6 +1,6 @@
 package Controller;
 
-import model.ModelVendaProduto;
+import Model.ModelVendaProduto;
 import Dao.DaoVendaProduto;
 import java.util.ArrayList;
 

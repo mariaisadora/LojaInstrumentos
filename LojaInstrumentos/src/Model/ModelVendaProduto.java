@@ -1,15 +1,15 @@
-package model;
-/**
-*
-* @author dell
-*/
+package Model;
+
 public class ModelVendaProduto {
 
     private int  codigoVendaP;
     private int produtoVenda;
-    private double  valorProValor;
+    private double vendaProValor;
     private int vendas;
     private int vendaProQtd;
+    private String nomeProduto;
+
+   
 
     /**
     * Construtor
@@ -28,6 +28,14 @@ public class ModelVendaProduto {
     */
     public int  getCodigoVendaP(){
         return this.codigoVendaP;
+    }
+    
+     public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
     /**
@@ -48,14 +56,14 @@ public class ModelVendaProduto {
     * seta o valor de valorProValor
     * @param pValorProValor
     */
-    public void setValorProValor(double  pValorProValor){
-        this.valorProValor = pValorProValor;
+    public void setVendaProValor(double  pVendaProValor){
+        this.vendaProValor = pVendaProValor;
     }
     /**
     * return valorProValor
     */
-    public double  getValorProValor(){
-        return this.valorProValor;
+    public double  getVendaProValor(){
+        return this.vendaProValor;
     }
 
     /**
@@ -88,6 +96,9 @@ public class ModelVendaProduto {
 
     @Override
     public String toString(){
-        return "ModelVendaProduto {" + "::codigoVendaP = " + this.codigoVendaP + "::produtoVenda = " + this.produtoVenda + "::valorProValor = " + this.valorProValor + "::vendas = " + this.vendas + "::vendaProQtd = " + this.vendaProQtd +  "}";
+        return "ModelVendaProduto {" + "::codigoVendaP = " + this.codigoVendaP 
+                + "::produtoVenda = " + this.produtoVenda + "::valorProValor = " 
+                + this.vendaProValor + "::vendas = " + this.vendas + "::vendaProQtd = " 
+                + this.vendaProQtd +  "}";
     }
 }

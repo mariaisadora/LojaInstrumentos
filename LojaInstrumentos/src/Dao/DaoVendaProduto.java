@@ -1,6 +1,6 @@
 package Dao;
 
-import model.ModelVendaProduto;
+import Model.ModelVendaProduto;
 import java.util.ArrayList;
 import Connection.ConnectionFactory;
 /**
@@ -26,7 +26,7 @@ public class DaoVendaProduto extends ConnectionFactory {
                 + ") VALUES ("
                     + "'" + pModelVendaProduto.getCodigoVendaP() + "',"
                     + "'" + pModelVendaProduto.getProdutoVenda() + "',"
-                    + "'" + pModelVendaProduto.getValorProValor() + "',"
+                    + "'" + pModelVendaProduto.getVendaProValor() + "',"
                     + "'" + pModelVendaProduto.getVendas() + "',"
                     + "'" + pModelVendaProduto.getVendaProQtd() + "'"
                 + ");"
@@ -65,7 +65,7 @@ public class DaoVendaProduto extends ConnectionFactory {
             while(this.getResultSet().next()){
                 modelVendaProduto.setCodigoVendaP(this.getResultSet().getInt (1));
                 modelVendaProduto.setProdutoVenda(this.getResultSet().getInt(2));
-                modelVendaProduto.setValorProValor(this.getResultSet().getDouble (3));
+                modelVendaProduto.setVendaProValor(this.getResultSet().getDouble (3));
                 modelVendaProduto.setVendas(this.getResultSet().getInt(4));
                 modelVendaProduto.setVendaProQtd(this.getResultSet().getInt(5));
             }
@@ -102,7 +102,7 @@ public class DaoVendaProduto extends ConnectionFactory {
                 modelVendaProduto = new ModelVendaProduto();
                 modelVendaProduto.setCodigoVendaP(this.getResultSet().getInt (1));
                 modelVendaProduto.setProdutoVenda(this.getResultSet().getInt(2));
-                modelVendaProduto.setValorProValor(this.getResultSet().getDouble (3));
+                modelVendaProduto.setVendaProValor(this.getResultSet().getDouble (3));
                 modelVendaProduto.setVendas(this.getResultSet().getInt(4));
                 modelVendaProduto.setVendaProQtd(this.getResultSet().getInt(5));
                 listamodelVendaProduto.add(modelVendaProduto);
@@ -126,7 +126,7 @@ public class DaoVendaProduto extends ConnectionFactory {
             return this.executarUpdateDeleteSQL(
                 "UPDATE venda_produto SET "
                     + "produto_venda = '" + pModelVendaProduto.getProdutoVenda() + "',"
-                    + "valor_pro_valor = '" + pModelVendaProduto.getValorProValor() + "',"
+                    + "valor_pro_valor = '" + pModelVendaProduto.getVendaProValor() + "',"
                     + "vendas = '" + pModelVendaProduto.getVendas() + "',"
                     + "venda_pro_qtd = '" + pModelVendaProduto.getVendaProQtd() + "'"
                 + " WHERE "

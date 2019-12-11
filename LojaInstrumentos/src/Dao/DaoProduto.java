@@ -142,6 +142,24 @@ public class DaoProduto extends ConnectionFactory {
         }
         return listaModelProduto;
     } 
+    public boolean alterarEstoqueProdutosDAO(ArrayList<ModelProduto> pListaModelProduto) {
+        try {
+            this.conectar();
+            for (int i = 0; i < pListaModelProduto.size(); i++) {
+                this.executarUpdateDeleteSQL(
+                        "UPDATE produto SET "
+                        + "quantidade_estoque_prod = '" + pListaModelProduto.get(i).getQuantidadeEstoqueProduto()+ "'"
+                        + " WHERE cod_prod = '" + pListaModelProduto.get(i).getCodigoProduto() + "'"
+                );
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            this.fecharConexao();
+        }
+    }
 }
         
    
