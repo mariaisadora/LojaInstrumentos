@@ -56,4 +56,14 @@ public class ControllerVenda {
     public boolean excluirVendasController(int pCodigoVenda){
         return this.daoVendas.excluirVendasDAO(pCodigoVenda);
     }
+    
+    /**
+     * Gerar o relatorio da venda
+     * @param codigoVenda
+     * @return 
+     */
+    public boolean gerarRelatorioVenda(int codigoVenda) {
+        return this.daoVendas.RelatorioVendaDAO(codigoVenda);
+
+    }
 }

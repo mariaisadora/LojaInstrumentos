@@ -162,4 +162,32 @@ public class DaoVendaProduto extends ConnectionFactory {
             this.fecharConexao();
         }
     }
+    
+    public boolean salvarVendaProdutoDAO(ArrayList<ModelVendaProduto> pListaModelVendaProduto) {
+        try {
+            this.conectar();
+            int cont = pListaModelVendaProduto.size();
+            for (int i = 0; i < cont; i++) {
+                this.insertSQL(
+                        "INSERT INTO tbl_vendas_produtos ("
+                        + "fk_vendas,"
+                        + "fk_produto,"
+                        + "ven_pro_valor,"
+                        + "ven_pro_quantidade"
+                        + ") VALUES ("
+                        + "'" + pListaModelVendaProduto.get(i).getVendas() + "',"
+                        + "'" + pListaModelVendaProduto.get(i).getProdutoVenda()+ "',"
+                        + "'" + pListaModelVendaProduto.get(i).getVendaProValor() + "',"
+                        + "'" + pListaModelVendaProduto.get(i).getVendaProQtd() + "'"
+                        + ");"
+                );
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            this.fecharConexao();
+        }
+    }
 }

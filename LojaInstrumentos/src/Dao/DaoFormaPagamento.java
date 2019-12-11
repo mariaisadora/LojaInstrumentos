@@ -18,16 +18,14 @@ public class DaoFormaPagamento extends ConnectionFactory {
         try {
             this.conectar();
             return this.insertSQL(
-                "INSERT INTO tbl_forma_pagamento ("
-                    + "pk_id_for_pag,"
-                    + "descricao_for_pag,"
-                    + "desconto_for_pag,"
-                    + "parcelas_for_pag,"
-                    + "situacao_for_pag"
+                "INSERT INTO pagamento ("
+                    + "id_pagamento,"
+                    + "descricao_pagamento,"
+                    + "parcelas_pagamento,"
+                    + "situacao_pagamento"
                 + ") VALUES ("
                     + "'" + pModelFormaPagamento.getIdForPag() + "',"
                     + "'" + pModelFormaPagamento.getDescricaoForPag() + "',"
-                    + "'" + pModelFormaPagamento.getDescontoForPag() + "',"
                     + "'" + pModelFormaPagamento.getParcelasForPag() + "',"
                     + "'" + pModelFormaPagamento.getSituacaoForPag() + "'"
                 + ");"
@@ -51,24 +49,22 @@ public class DaoFormaPagamento extends ConnectionFactory {
             this.conectar();
             this.executarSQL(
                 "SELECT "
-                    + "pk_id_for_pag,"
-                    + "descricao_for_pag,"
-                    + "desconto_for_pag,"
-                    + "parcelas_for_pag,"
-                    + "situacao_for_pag"
+                    + "id_pagamento,"
+                    + "descricao_pagamento,"
+                    + "parcelas_pagamento,"
+                    + "situacao_pagamento"
                  + " FROM"
-                     + " tbl_forma_pagamento"
+                     + " pagamento"
                  + " WHERE"
-                     + " pk_id_for_pag = '" + pIdForPag + "'"
+                     + " id_pagamento = '" + pIdForPag + "'"
                 + ";"
             );
 
             while(this.getResultSet().next()){
                 modelFormaPagamento.setIdForPag(this.getResultSet().getInt(1));
                 modelFormaPagamento.setDescricaoForPag(this.getResultSet().getString(2));
-                modelFormaPagamento.setDescontoForPag(this.getResultSet().getFloat(3));
-                modelFormaPagamento.setParcelasForPag(this.getResultSet().getInt(4));
-                modelFormaPagamento.setSituacaoForPag(this.getResultSet().getInt(5));
+                modelFormaPagamento.setParcelasForPag(this.getResultSet().getInt(3));
+                modelFormaPagamento.setSituacaoForPag(this.getResultSet().getInt(4));
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -89,13 +85,12 @@ public class DaoFormaPagamento extends ConnectionFactory {
             this.conectar();
             this.executarSQL(
                 "SELECT "
-                    + "pk_id_for_pag,"
-                    + "descricao_for_pag,"
-                    + "desconto_for_pag,"
-                    + "parcelas_for_pag,"
-                    + "situacao_for_pag"
+                    + "id_pagamento,"
+                    + "descricao_pagamento,"
+                    + "parcelas_pagamento,"
+                    + "situacao_pagamento"
                  + " FROM"
-                     + " tbl_forma_pagamento"
+                     + " pagamento"
                 + ";"
             );
 
@@ -103,9 +98,8 @@ public class DaoFormaPagamento extends ConnectionFactory {
                 modelFormaPagamento = new ModelFormaPagamento();
                 modelFormaPagamento.setIdForPag(this.getResultSet().getInt(1));
                 modelFormaPagamento.setDescricaoForPag(this.getResultSet().getString(2));
-                modelFormaPagamento.setDescontoForPag(this.getResultSet().getFloat(3));
-                modelFormaPagamento.setParcelasForPag(this.getResultSet().getInt(4));
-                modelFormaPagamento.setSituacaoForPag(this.getResultSet().getInt(5));
+                modelFormaPagamento.setParcelasForPag(this.getResultSet().getInt(3));
+                modelFormaPagamento.setSituacaoForPag(this.getResultSet().getInt(4));
                 listamodelFormaPagamento.add(modelFormaPagamento);
             }
         }catch(Exception e){
@@ -125,14 +119,13 @@ public class DaoFormaPagamento extends ConnectionFactory {
         try {
             this.conectar();
             return this.executarUpdateDeleteSQL(
-                "UPDATE tbl_forma_pagamento SET "
-                    + "pk_id_for_pag = '" + pModelFormaPagamento.getIdForPag() + "',"
-                    + "descricao_for_pag = '" + pModelFormaPagamento.getDescricaoForPag() + "',"
-                    + "desconto_for_pag = '" + pModelFormaPagamento.getDescontoForPag() + "',"
-                    + "parcelas_for_pag = '" + pModelFormaPagamento.getParcelasForPag() + "',"
-                    + "situacao_for_pag = '" + pModelFormaPagamento.getSituacaoForPag() + "'"
+                "UPDATE pagamento SET "
+                    + "id_pagamento = '" + pModelFormaPagamento.getIdForPag() + "',"
+                    + "descricao_pagamento = '" + pModelFormaPagamento.getDescricaoForPag() + "',"
+                    + "parcelas_pagamento = '" + pModelFormaPagamento.getParcelasForPag() + "',"
+                    + "situacao_pagamento = '" + pModelFormaPagamento.getSituacaoForPag() + "'"
                 + " WHERE "
-                    + "pk_id_for_pag = '" + pModelFormaPagamento.getIdForPag() + "'"
+                    + "id_pagamento = '" + pModelFormaPagamento.getIdForPag() + "'"
                 + ";"
             );
         }catch(Exception e){
@@ -152,9 +145,9 @@ public class DaoFormaPagamento extends ConnectionFactory {
         try {
             this.conectar();
             return this.executarUpdateDeleteSQL(
-                "DELETE FROM tbl_forma_pagamento "
+                "DELETE FROM pagamento "
                 + " WHERE "
-                    + "pk_id_for_pag = '" + pIdForPag + "'"
+                    + "id_pagamento = '" + pIdForPag + "'"
                 + ";"
             );
         }catch(Exception e){

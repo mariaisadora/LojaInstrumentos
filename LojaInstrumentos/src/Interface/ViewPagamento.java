@@ -60,10 +60,8 @@ public class ViewPagamento extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jtfRecebido = new javax.swing.JFormattedTextField();
-        jtfDesconto = new javax.swing.JFormattedTextField();
         jcbPagamento = new javax.swing.JComboBox<String>();
         jtfSubtotal = new javax.swing.JFormattedTextField();
         jPanel2 = new javax.swing.JPanel();
@@ -85,9 +83,6 @@ public class ViewPagamento extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setText("Pagamento:");
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel4.setText("Desconto:");
-
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Valor Recebido:");
 
@@ -100,18 +95,6 @@ public class ViewPagamento extends javax.swing.JDialog {
         jtfRecebido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfRecebidoActionPerformed(evt);
-            }
-        });
-
-        jtfDesconto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jtfDesconto.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jtfDescontoFocusLost(evt);
-            }
-        });
-        jtfDesconto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfDescontoActionPerformed(evt);
             }
         });
 
@@ -131,28 +114,23 @@ public class ViewPagamento extends javax.swing.JDialog {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtfDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jtfSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jcbPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jtfRecebido, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtfSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jcbPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtfRecebido, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,15 +143,11 @@ public class ViewPagamento extends javax.swing.JDialog {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcbPagamento, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jtfDesconto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtfRecebido, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(jtfRecebido, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
@@ -271,12 +245,6 @@ public class ViewPagamento extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtfDescontoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfDescontoFocusLost
-        // TODO add your handling code here:
-        jtfDesconto.setText(blm.converterVirgulaParaPonto(jtfDesconto.getText()));
-        calcularPagamento();
-    }//GEN-LAST:event_jtfDescontoFocusLost
-
     private void jtfRecebidoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtfRecebidoFocusLost
         // TODO add your handling code here:
         jtfRecebido.setText(blm.converterVirgulaParaPonto(jtfRecebido.getText()));
@@ -285,17 +253,10 @@ public class ViewPagamento extends javax.swing.JDialog {
 
     private void jcbPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPagamentoActionPerformed
         // TODO add your handling code here:
-        jtfDesconto.requestFocus();
     }//GEN-LAST:event_jcbPagamentoActionPerformed
-
-    private void jtfDescontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfDescontoActionPerformed
-        // TODO add your handling code here:
-        jtfRecebido.requestFocus();
-    }//GEN-LAST:event_jtfDescontoActionPerformed
 
     private void jtfRecebidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfRecebidoActionPerformed
         // Finaliza o pagamento
-        this.desconto = Float.parseFloat(this.jtfDesconto.getText());
         this.valorRecebido = Float.parseFloat(this.jtfRecebido.getText());
         this.troco = Float.parseFloat(this.jtfTroco.getText());
         this.valorTotal = Float.parseFloat(this.jlValorTotal.getText());
@@ -307,18 +268,12 @@ public class ViewPagamento extends javax.swing.JDialog {
     //calcula o valor total a pagar e troco 
     private void calcularPagamento() {
 
-        float subTotal, desconto, recibido, pagar, troco;
+        float subTotal, recibido, pagar, troco;
 
         try {
             subTotal = Float.parseFloat(jtfSubtotal.getText());
         } catch (Exception e) {
             subTotal = 0;
-        }
-        try {
-            desconto = Float.parseFloat(jtfDesconto.getText());
-        } catch (Exception e) {
-            desconto = 0;
-            jtfDesconto.setText("0");
         }
         try {
             recibido = Float.parseFloat(jtfRecebido.getText());
@@ -328,7 +283,7 @@ public class ViewPagamento extends javax.swing.JDialog {
         }
 
         //calcular valor a pagar
-        pagar = subTotal - desconto;
+        pagar = subTotal;
         jlValorTotal.setText(blm.arredondamentoComPontoDuasCasasString(pagar));
         //calculando troco
         troco = recibido - pagar;
@@ -390,7 +345,6 @@ public class ViewPagamento extends javax.swing.JDialog {
     }
 
     private void limparCampos(){
-        jtfDesconto.setText("0");
         jtfRecebido.setText("0");
     }
 
@@ -398,7 +352,6 @@ public class ViewPagamento extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
@@ -407,7 +360,6 @@ public class ViewPagamento extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JComboBox<String> jcbPagamento;
     private javax.swing.JLabel jlValorTotal;
-    private javax.swing.JFormattedTextField jtfDesconto;
     private javax.swing.JFormattedTextField jtfRecebido;
     private javax.swing.JFormattedTextField jtfSubtotal;
     private javax.swing.JTextField jtfTroco;
@@ -425,13 +377,6 @@ public class ViewPagamento extends javax.swing.JDialog {
      */
     public void setValorTotal(float valorTotal) {
         this.valorTotal = valorTotal;
-    }
-
-    /**
-     * @return the desconto
-     */
-    public float getDesconto() {
-        return desconto;
     }
 
     /**
