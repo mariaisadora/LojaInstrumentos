@@ -6,7 +6,7 @@ create table cliente
 cod_cli smallint not null auto_increment,
 nome_cli varchar(45) not null,
 sobrenome_cli varchar(45)not null,
-cpf_cli numeric(11) unique not null,
+cpf_cli varchar(15) unique not null,
 endereco_cli varchar(40) not null,
 bairro_cli varchar(45)not null,
 cidade_cli varchar(30) not null,
@@ -16,7 +16,24 @@ telefone_cli varchar(15) not null,
 
 primary key(cod_cli));
 
-DROP table vcliente;
+INSERT INTO cliente (nome_cli,sobrenome_cli,cpf_cli, endereco_cli, cidade_cli,cep_cli,uf_cli,telefone_cli)
+	VALUES('edu','edu',12345678900,'rua dois','paulista','12333455','sp','222222222');
+insert into cliente(nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,telefone_cli)
+	values("geronimo","hugo",12345678910,"rua amaro","sao paulo","02233330","sp","112344321");
+insert into cliente(nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,telefone_cli)
+	values("thiago","brava",12345678901,"rua acapulco","sbt tvs","02233331","sp","152344321");
+insert into cliente(nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,telefone_cli)
+	values("augusto","cury",12345678902,"rua peruibe","santos","02233332","sp","162344321");    
+insert into cliente(nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,telefone_cli)
+	values("priscila","lira",12345678903,"rua ubatuba","sao paulo","02233333","sp","172344321");
+insert into cliente(nome_cli,sobrenome_cli,cpf_cli,endereco_cli,cidade_cli,cep_cli,uf_cli,telefone_cli)
+	values("renata","gonçalvez",12345678904,"rua paraty","rio de janeiro","02233334","sp","182344321") ;
+
+
+
+
+
+
 create table produto
 (
 cod_prod smallint not null auto_increment,
@@ -25,6 +42,7 @@ descricao_prod varchar(45) not null,
 quantidade_estoque_prod int(200)not null,
 valor_prod decimal(10,2)not null,
 primary key(cod_prod));
+
 
 create table venda (
 cod_venda int not null auto_increment unique,

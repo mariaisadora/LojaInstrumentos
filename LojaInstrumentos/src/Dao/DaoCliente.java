@@ -25,7 +25,7 @@ public class DaoCliente extends ConnectionFactory {
                     + "cep_cli,"
                     + "uf_cli,"
                     + "telefone_cli)"
-                    + " VALUES("
+                    +" VALUES("
                     + "'" + pModelCliente.getNomeCliente()+ "',"
                     + "'" + pModelCliente.getSobrenomeCliente()+ "',"
                     + "'" + pModelCliente.getCpfCliente()+ "'," 
@@ -74,6 +74,7 @@ public class DaoCliente extends ConnectionFactory {
         try {
             this.conectar();
             return this.executarUpdateDeleteSQL("UPDATE cliente SET "
+                     + "cod_cli = '" + pModelCliente.getCodigoCliente()+ "',"
                     + "nome_cli = '" + pModelCliente.getNomeCliente() + "',"
                     + "sobrenome_cli = '" + pModelCliente.getSobrenomeCliente() + "',"        
                     + "cpf_cli = '" + pModelCliente.getCpfCliente() + "',"        
@@ -84,7 +85,8 @@ public class DaoCliente extends ConnectionFactory {
                     + "telefone_cli = '" + pModelCliente.getTelefoneCliente() + "'"
                     + " WHERE "
                     + "cod_cli = '" + pModelCliente.getCodigoCliente() + "'"
-                    + ";");
+                    + ";"
+            );
 
         } catch (Exception e) {
             e.printStackTrace();
