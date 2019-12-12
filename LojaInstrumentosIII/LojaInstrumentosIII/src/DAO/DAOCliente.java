@@ -3,10 +3,7 @@ package DAO;
 import model.ModelCliente;
 import conexoes.ConexaoMySql;
 import java.util.ArrayList;
-/**
-*
-* @author Leandro Nazareth
-*/
+
 public class DAOCliente extends ConexaoMySql {
 
     /**

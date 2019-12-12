@@ -4,10 +4,7 @@ import model.ModelVendasProdutos;
 import conexoes.ConexaoMySql;
 import java.util.ArrayList;
 
-/**
- *
- * @author Leandro
- */
+
 public class DAOVendasProdutos extends ConexaoMySql {
 
     /**

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view;
 
 import controller.ControllerProdutos;
@@ -15,10 +11,7 @@ import javax.swing.table.TableRowSorter;
 import model.ModelProdutos;
 import util.Formatador;
 
-/**
- *
- * @author Aula
- */
+
 public class ViewProduto extends javax.swing.JFrame {
 
     ArrayList<ModelProdutos> listaModelProdutos = new ArrayList<>();
@@ -273,11 +266,11 @@ public class ViewProduto extends javax.swing.JFrame {
         int linha = jtableProdutos.getSelectedRow();
         int codigoProduto = (int) jtableProdutos.getValueAt(linha, 0);
         if (controllerProdutos.excluirProdutoController(codigoProduto)) {
-            JOptionPane.showMessageDialog(this, "Produto excluido com sucesso!", " ATENÇÃO", JOptionPane.WARNING_MESSAGE);;
+            JOptionPane.showMessageDialog(this, "Produto excluido com sucesso!");;
             this.carregarProdutos();
             this.habilitarDesabilitarCampos(false);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao excluir o produto!", "ERRO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Erro ao excluir o produto!");
         }
     }//GEN-LAST:event_jbExcluirActionPerformed
 
@@ -302,7 +295,7 @@ public class ViewProduto extends javax.swing.JFrame {
             this.jtfEstoque.setText(String.valueOf(modelProdutos.getProEstoque()));
             this.jtfValor.setText(String.valueOf(modelProdutos.getProValor()));
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Código inválido ou nenhum registro selecionado!", "Aviso", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Código inválido ou nenhum registro selecionado!");
         }
     }//GEN-LAST:event_jbAlterarActionPerformed
 
@@ -357,12 +350,12 @@ public class ViewProduto extends javax.swing.JFrame {
         modelProdutos.setProEstoque(Integer.parseInt(this.jtfEstoque.getText()));
         modelProdutos.setProValor(formatador.converterVirgulaParaPonto(this.jtfValor.getText()));
         if (controllerProdutos.salvarProdutoController(modelProdutos) > 0) {
-            JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Produto cadastrado com sucesso!");
             this.carregarProdutos();
             this.limparCampos();
             this.habilitarDesabilitarCampos(false);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao cadastrar o produto!", "ERRO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Erro ao cadastrar o produto!");
         }
     }
     
@@ -372,12 +365,12 @@ public class ViewProduto extends javax.swing.JFrame {
         modelProdutos.setProEstoque(Integer.parseInt(this.jtfEstoque.getText()));
         modelProdutos.setProValor(formatador.converterVirgulaParaPonto(this.jtfValor.getText()));
         if (controllerProdutos.alterarProdutoController(modelProdutos)) {
-            JOptionPane.showMessageDialog(this, "Produto alterado com sucesso!", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Produto alterado com sucesso!");
             this.carregarProdutos();
             this.limparCampos();
             this.habilitarDesabilitarCampos(false);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao alterar o produto!", "ERRO", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Erro ao alterar o produto!");
         }
     }
     

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DAO;
 
 import conexoes.ConexaoMySql;
@@ -11,10 +7,7 @@ import model.ModelCliente;
 import model.ModelVendas;
 import model.ModelVendasCliente;
 
-/**
- *
- * @author Aula
- */
+
 public class DAOVendasCliente extends ConexaoMySql {
 
     public ArrayList<ModelVendasCliente> getListaVendasClienteDAO() {

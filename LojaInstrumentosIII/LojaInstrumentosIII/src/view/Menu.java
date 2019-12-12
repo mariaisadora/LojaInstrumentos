@@ -22,7 +22,6 @@ public class Menu extends javax.swing.JFrame {
         btnCadastarProduto = new javax.swing.JButton();
         btnRelatorio = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        btnPdv = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -80,15 +79,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnPdv.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        btnPdv.setText("PDV");
-        btnPdv.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnPdv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPdvActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -100,8 +90,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btnNovoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                     .addComponent(btnCadastarProduto, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                     .addComponent(btnRelatorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPdv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSair, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -115,11 +104,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btnCadastarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnPdv, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -176,10 +163,6 @@ public class Menu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void btnPdvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdvActionPerformed
-        new ViewPDV().setVisible(true);
-    }//GEN-LAST:event_btnPdvActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -222,7 +205,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastarProduto;
     private javax.swing.JButton btnNovaVenda;
     private javax.swing.JButton btnNovoCliente;
-    private javax.swing.JButton btnPdv;
     private javax.swing.JButton btnRelatorio;
     private javax.swing.JButton btnSair;
     private javax.swing.JMenuBar jMenuBar1;

@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DAO;
 
 import conexoes.ConexaoMySql;
 import java.util.ArrayList;
 import model.ModelProdutos;
 
-/**
- *
- * @author Aula
- */
+
 public class DaoProdutos extends ConexaoMySql {
 
     /**

@@ -1,20 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model;
 
-
-
-/**
- *
- * @author Aula
-private int idProduto;
- */
 public class ModelProdutos {
-    
+
     private int idProduto;
     private String proNome;
     private Double proValor;
@@ -75,7 +62,5 @@ public class ModelProdutos {
     public void setProEstoque(int proEstoque) {
         this.proEstoque = proEstoque;
     }
-    
-  
-    
+
 }

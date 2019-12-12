@@ -13,10 +13,7 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 
-/**
- *
- * @author Leandro
- */
+
 public class DAOVendas extends ConexaoMySql {
 
     /**

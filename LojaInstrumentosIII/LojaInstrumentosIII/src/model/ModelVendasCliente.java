@@ -1,19 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package model;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Aula
- */
 public class ModelVendasCliente {
-    
+
     private ModelVendas modelVendas;
     private ModelCliente modelCliente;
     private ArrayList<ModelVendasCliente> listaModelVendasClientes;
@@ -59,5 +49,5 @@ public class ModelVendasCliente {
     public void setListaModelVendasClientes(ArrayList<ModelVendasCliente> listaModelVendasClientes) {
         this.listaModelVendasClientes = listaModelVendasClientes;
     }
-    
+
 }

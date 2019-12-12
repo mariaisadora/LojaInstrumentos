@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package DAO;
 
@@ -12,10 +8,7 @@ import model.ModelProdutos;
 import model.ModelProdutosVendasProdutos;
 import model.ModelVendasProdutos;
 
-/**
- *
- * @author Aula
- */
+
 public class DAOProdutosVendasProdutos extends ConexaoMySql{
     
    public ArrayList<ModelProdutosVendasProdutos> getListaProdutosVendasProdutosDAO(int pCodigoVenda){

@@ -1,12 +1,5 @@
 package conexoes;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,10 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Br
- */
 public class ConexaoMySql {
 
     private boolean status = false;
@@ -26,15 +15,15 @@ public class ConexaoMySql {
     private Statement statement;
     private ResultSet resultSet;
 
-
     private String servidor = "localhost";
     private String nomeDoBanco = "lojainstrumentos";
     private String usuario = "root";
     private String senha = "";
-    
-    public ConexaoMySql(){}
-    
-    public ConexaoMySql(String pServidor, String pNomeDoBanco, String pUsuario, String pSenha){
+
+    public ConexaoMySql() {
+    }
+
+    public ConexaoMySql(String pServidor, String pNomeDoBanco, String pUsuario, String pSenha) {
         this.servidor = pServidor;
         this.nomeDoBanco = pNomeDoBanco;
         this.usuario = pUsuario;
@@ -43,21 +32,21 @@ public class ConexaoMySql {
 
     /**
      * Abre uma conexao com o banco
+     *
      * @return Connection
      */
-    public Connection conectar(){
+    public Connection conectar() {
         try {
             //Driver do PostgreSQL
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
             //local do banco, nome do banco, usuario e senha
-            String url = "jdbc:mysql://" + servidor + "/" + nomeDoBanco;
+            String url = "jdbc:mysql://localhost:3307/lojainstrumentos";
             this.setCon((Connection) DriverManager.getConnection(url, usuario, senha));
 
             //se ocorrer tudo bem, ou seja, se conectar a linha a segui é executada
             this.status = true;
-        }
-        catch(ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e){
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
         return this.getCon();
@@ -65,46 +54,48 @@ public class ConexaoMySql {
 
     /**
      * Executa consultas SQL
+     *
      * @param pSQL
      * @return int
      */
-    public boolean executarSQL(String pSQL){
+    public boolean executarSQL(String pSQL) {
         try {
             //createStatement de con para criar o Statement
             this.setStatement(getCon().createStatement());
 
             // Definido o Statement, executamos a query no banco de dados
             this.setResultSet(getStatement().executeQuery(pSQL));
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
         }
         return true;
     }
-    
-    public boolean executarUpdateDeleteSQL(String pSQL){
+
+    public boolean executarUpdateDeleteSQL(String pSQL) {
         try {
-            
+
             //createStatement de con para criar o Statement
             this.setStatement(getCon().createStatement());
 
             // Definido o Statement, executamos a query no banco de dados
             getStatement().executeUpdate(pSQL);
-            
+
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
         }
         return true;
     }
-    
+
     /**
      * Executa insert SQL
+     *
      * @param pSQL
      * @return boolean
      */
-    public int insertSQL(String pSQL){
+    public int insertSQL(String pSQL) {
         int status = 0;
         try {
             //createStatement de con para criar o Statement
@@ -112,15 +103,15 @@ public class ConexaoMySql {
 
             // Definido o Statement, executamos a query no banco de dados
             this.getStatement().executeUpdate(pSQL);
-            
+
             //consulta o ultimo id inserido
             this.setResultSet(this.getStatement().executeQuery("SELECT last_insert_id();"));
-            
+
             //recupera o ultimo id inserido
-            while(this.resultSet.next()){
+            while (this.resultSet.next()) {
                 status = this.resultSet.getInt(1);
             }
-            
+
             //retorna o ultimo id inserido
             return status;
         } catch (SQLException ex) {
@@ -131,20 +122,21 @@ public class ConexaoMySql {
 
     /**
      * encerra a conexão corrente
+     *
      * @return boolean
      */
-    public boolean fecharConexao(){
-       try {
-           if((this.getResultSet() != null) && (this.statement != null)){
-               this.getResultSet().close();
-               this.statement.close();
-           }
-           this.getCon().close();
-           return true;
-       } catch(SQLException e) {
-           JOptionPane.showMessageDialog(null, e.getMessage());
-       }
-       return false;
+    public boolean fecharConexao() {
+        try {
+            if ((this.getResultSet() != null) && (this.statement != null)) {
+                this.getResultSet().close();
+                this.statement.close();
+            }
+            this.getCon().close();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        return false;
     }
 
     /**
